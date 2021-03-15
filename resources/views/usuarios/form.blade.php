@@ -14,7 +14,6 @@
                         </div>
                     @endif
 
-
                     @if( Request::is('*/edit'))
                     <form action="{{url('usuarios/update')}}/{{$usuarios->id}}" method="post">
                     @csrf

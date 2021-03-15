@@ -4,7 +4,7 @@
 
 .map-responsive{
     overflow:hidden;
-    padding-bottom:52%;
+    padding-bottom:42%;
     position:relative;
     height:0;
 }

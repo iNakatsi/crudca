@@ -15,15 +15,15 @@ class CreateUsuarioTable extends Migration
     {
         Schema::create('usuarios', function (Blueprint $table) {
             $table->id();
-            $table->string('endereco', 250);
-            $table->string('coordenada0', 50);
-            $table->string('coordenada1', 50);
-            $table->string('nome', 120);
-            $table->string('atividade', 50);
-            $table->string('contato', 50);
+            $table->string('endereco');
+            $table->string('coordenada0');
+            $table->string('coordenada1');
+            $table->string('nome');
+            $table->string('atividade');
+            $table->string('contato');
             $table->date('data_pedido');
-            $table->string('observacao', 400)->nullable();
-            $table->string('andamento', 50);
+            $table->string('observacao')->nullable();
+            $table->string('andamento');
             $table->timestamps();
         });
     }

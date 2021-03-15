@@ -14,7 +14,7 @@
                         </div>
                     @endif
 
-                    <table class="table table-hover table-sm">
+                    <table class="table table-hover table-sm" id="usuarios_tabela">
                     <thead>
                       <tr>
                         <th scope="col">#</th>
@@ -53,6 +53,8 @@
                       @endforeach
                     </tbody>
                   </table>
+
+
 
                 </div>
             </div>

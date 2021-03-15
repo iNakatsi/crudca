@@ -10,7 +10,7 @@
     <title>CRUDCA</title>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    <!-- <script src="{{ asset('js/app.js') }}" defer></script> -->
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -18,11 +18,14 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css" rel="stylesheet">
 
     <!-- Map box link and reference -->
     <link href='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.0/mapbox-gl-geocoder.css" type="text/css">
     @livewireStyles
+
+
 
 </head>
 <body>
@@ -93,6 +96,7 @@
 
         <main class="py-4">
             @yield('content')
+
             {{ isset($slot) ? $slot : null }}
         </main>
     </div>
@@ -104,4 +108,14 @@
     @stack('scripts')
 
 </body>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src='https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js'></script>
+  <script>
+  $(document).ready( function () {
+    $('#usuarios_tabela').DataTable();
+} );
+  </script>
+
+
 </html>
