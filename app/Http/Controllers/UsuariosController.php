@@ -22,6 +22,11 @@ class UsuariosController extends Controller
       return view('usuarios.form');
     }
 
+    public function pendente(){
+    $usuarios = Usuario::where('andamento', '=', 'solicitado')->get();
+    return view('usuarios.list', ['usuarios' => $usuarios]);
+    }
+
     /* Funcao para adicionar formulario no banco de dados,verificar endereco e atribuir coordenadas */
     public function add( Request $request ){
       $usuario = new Usuario;

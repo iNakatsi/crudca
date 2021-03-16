@@ -34,3 +34,4 @@ Route::post('/usuarios/update/{id}', [App\Http\Controllers\UsuariosController::c
 Route::delete('/usuarios/delete/{id}', [App\Http\Controllers\UsuariosController::class, 'delete'])->middleware('auth');
 #Route::get('/map', MapLocation::class);
 Route::get('/usuarios/mapa', [App\Http\Controllers\UsuariosController::class, 'mapa'])->middleware('auth');
+Route::get('/usuarios/pendente', [App\Http\Controllers\UsuariosController::class, 'pendente'])->middleware('auth');

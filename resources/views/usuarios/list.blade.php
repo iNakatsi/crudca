@@ -14,26 +14,26 @@
                         </div>
                     @endif
 
-                    <table class="table table-hover table-sm" id="usuarios_tabela">
+                    <table id="myTable" class="display nowrap" style="width:100%">
                     <thead>
                       <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Endereco</th>
-                        <th scope="col">Nome</th>
-                        <th scope="col">Atividade</th>
-                        <th scope="col">Contato</th>
-                        <th scope="col">Andamento</th>
-                        <th scope="col">Data Pedido</th>
-                        <th scope="col">Observação</th>
-                        <th scope="col"></th>
-                        <th scope="col"></th>
+                        <th>#</th>
+                        <th>Endereco</th>
+                        <th>Nome</th>
+                        <th>Atividade</th>
+                        <th>Contato</th>
+                        <th>Andamento</th>
+                        <th>Data Pedido</th>
+                        <th>Observação</th>
+                        <th></th>
+                        <th></th>
                       </tr>
                     </thead>
 
                     <tbody>
                       @foreach( $usuarios as $u)
                       <tr>
-                        <th scope="row">{{$u->id}}</th>
+                        <th>{{$u->id}}</th>
                         <td>{{$u->endereco}}</td>
                         <td>{{$u->nome}}</td>
                         <td>{{$u->atividade}}</td>
@@ -41,12 +41,12 @@
                         <td>{{$u->andamento}}</td>
                         <td>{{$u->data_pedido}}</td>
                         <td>{{$u->observacao}}</td>
-                        <td><a href="usuarios/{{$u->id}}/edit" class="btn btn-primary"><i class="far fa-edit"></i></a></td>
+                        <td><a href="usuarios/{{$u->id}}/edit" class="btn btn-light"><i class="far fa-edit"></i></a></td>
                         <td>
                           <form action="usuarios/delete/{{$u->id}}" method="post">
                             @csrf
                             @method('delete')
-                            <button class="btn btn-danger"><i class="fas fa-trash"></i></button>
+                            <button class="btn btn-outline-danger"><i class="fas fa-trash"></i></button>
                           </form>
                         </td>
                       </tr>
