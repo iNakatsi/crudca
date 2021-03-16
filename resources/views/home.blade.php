@@ -14,12 +14,9 @@
                         </div>
                     @endif
 
-                    <h1>Bem vindo</h1>
-                    <a href="{{ url('usuarios') }}"> Lista usuarios </a>
+                    <h5>Grafico de atividade</h5>
 
-                    <i class="fas fa-user"></i> <!-- uses solid style -->
-                    <i class="fab fa-github-square"></i> <!-- uses brand style -->
-
+                    <canvas id="myChart" width="400" height="200"></canvas>
 
                 </div>
             </div>
@@ -27,3 +24,27 @@
     </div>
 </div>
 @endsection
+
+@push('scripts')
+<script>
+var ctx = document.getElementById("myChart").getContext('2d');
+var myChart = new Chart(ctx, {
+  type: 'pie',
+  data: {
+    labels: ["Green", "Blue", "Gray", "Purple", "Yellow", "Red", "Black"],
+    datasets: [{
+      backgroundColor: [
+        "#2ecc71",
+        "#3498db",
+        "#95a5a6",
+        "#9b59b6",
+        "#f1c40f",
+        "#e74c3c",
+        "#34495e"
+      ],
+      data: [12, 19, 3, 17, 28, 24, 7]
+    }]
+  }
+});
+</script>
+@endpush

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Usuario;
 use Redirect;
+use Carbon\Carbon;
 
 class UsuariosController extends Controller
 {
@@ -97,5 +98,7 @@ class UsuariosController extends Controller
 
       return $coord;
     }
+
+
 
 }

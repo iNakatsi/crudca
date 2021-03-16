@@ -26,7 +26,8 @@
     <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.0/mapbox-gl-geocoder.css" type="text/css">
     @livewireStyles
 
-
+    <!-- Chat JS -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
 
 </head>
 <body>
@@ -41,8 +42,9 @@
               </nav>
 
               <div class="btn-group" role="group">
+              <button type="button" class="btn btn-light"><a href="{{ url('home')}}"><i class="fas fa-home"></i> Início</a></button>
               <button type="button" class="btn btn-light"><a href="{{ url('usuarios/new')}}"><i class="fas fa-user-plus"></i> Cadastrar</a></button>
-              <button type="button" class="btn btn-light"><a href="{{ url('usuarios')}}"><i class="fas fa-table"></i> Tabela</a></button>
+              <button type="button" class="btn btn-light"><a href="{{ url('usuarios')}}"><i class="fas fa-table"></i> Pedidos</a></button>
               <button type="button" class="btn btn-light"><a href="{{ url('usuarios/mapa')}}"><i class="fas fa-map-marked-alt"></i> Mapa</a></button>
               </div>
 
@@ -120,6 +122,7 @@
   <script src='https://cdn.datatables.net/buttons/1.7.0/js/buttons.html5.min.js'></script>
 
   <script>
+  //Data Table Script
   $(document).ready(function() {
       $('#myTable').DataTable( {
           dom: 'Bfrtip',
@@ -135,6 +138,7 @@
 
 
   });
+
   </script>
 
 
