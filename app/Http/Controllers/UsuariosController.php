@@ -39,7 +39,7 @@ class UsuariosController extends Controller
     }
 
     public function relatorioDiario(){
-    $usuarios = Usuario::where('data_finalizado', Carbon::today())->orwhere('data_pedido', Carbon::today())->get();
+    $usuarios = Usuario::where('data_finalizado', Carbon::today('America/Sao_Paulo'))->orwhere('data_pedido', Carbon::today('America/Sao_Paulo'))->get();
     #$usuarios = DB::table('usuarios')->select(DB::raw('*'))->whereRaw('Date(data_finalizado) = CURDATE()')->get();
     #$usuarios = Usuario::whereDate('data_finalizado', '2021-03-18')->get();
     return view('usuarios.list', ['usuarios' => $usuarios]);

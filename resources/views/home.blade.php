@@ -17,9 +17,7 @@
                     <h5>Grafico de atividade</h5>
                     <canvas id="myChart" width="400" height="200"></canvas>
 
-                    <?php $result = json_decode($atividades,true);
-                     var_dump($result);
-                    ?>
+                    <?php $result = json_decode($atividades,true);?>
 
 
                 </div>

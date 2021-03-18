@@ -38,3 +38,8 @@ Route::get('/usuarios/pendente', [App\Http\Controllers\UsuariosController::class
 Route::get('/usuarios/relatorioDiario', [App\Http\Controllers\UsuariosController::class, 'relatorioDiario'])->middleware('auth');
 
 Route::get('/usuarios/grafPieAtividade', [App\Http\Controllers\UsuariosController::class, 'grafPieAtividade'])->middleware('auth');
+
+#Redirecionar pagina principal
+Route::get('/', function () {
+    return redirect('usuarios/grafPieAtividade');
+});

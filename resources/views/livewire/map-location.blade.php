@@ -9,10 +9,12 @@
     height:0;
 }
 
+/*
 #fit {
+display: block;
 position: relative;
-margin: 0px auto;
-width: 100%;
+margin: 0px;
+width: 40px;
 height: 40px;
 padding: 10px;
 border: none;
@@ -22,6 +24,19 @@ text-align: center;
 color: #fff;
 background: #ee8a65;
 }
+*/
+
+.my-custom-control {
+  display: block;
+  color: #f00;
+  background: #000;
+  padding: 8px;
+  border-radius: 4px;
+  margin: 8px;
+  position: relative;
+  left: 0px;
+}
+
 </style>
 
 <!-- app.css para estilizacao da pagina -->
@@ -30,7 +45,7 @@ background: #ee8a65;
 
 <div class="container-fluid">
 
-  <button id="fit"><i class="fas fa-arrows-alt"></i></button>
+  <button id="fit" class='btn btn-dark'><i class="fas fa-arrows-alt"></i></button>
   <div id='map' class="map-responsive"></div>
 
 </div>
@@ -263,6 +278,34 @@ map.on('load', function () {
             map.getCanvas().style.cursor = '';
             popup.remove();
           });
+
+          //********** Adicao botao customizado  **********
+/*          class MyCustomControl {
+          onAdd(map){
+            this.map = map;
+            this.container = document.createElement('div');
+            this.container.className = 'my-custom-control';
+            this.container.textContent = 'Test';
+            return this.container;
+          }
+          onRemove(){
+            this.container.parentNode.removeChild(this.container);
+            this.map = undefined;
+          }
+        }
+
+        const myCustomControl = new MyCustomControl();
+        map.addControl(myCustomControl);
+
+        document.getElementById('my-custom-control').addEventListener('click', function () {
+            map.fitBounds([
+                //-53.0102,-24.0509
+                [-53.0199,-24.0639],
+                [-53.0000,-24.0400]
+            ]);
+        });
+*/
+
 
 
 });
