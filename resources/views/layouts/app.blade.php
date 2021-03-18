@@ -42,7 +42,7 @@
               </nav>
 
               <div class="btn-group" role="group">
-              <button type="button" class="btn btn-light"><a href="{{ url('home')}}"><i class="fas fa-home"></i> Início</a></button>
+              <button type="button" class="btn btn-light"><a href="{{ url('usuarios/grafPieAtividade')}}"><i class="fas fa-home"></i> Início</a></button>
               <button type="button" class="btn btn-light"><a href="{{ url('usuarios/new')}}"><i class="fas fa-user-plus"></i> Cadastrar</a></button>
               <button type="button" class="btn btn-light"><a href="{{ url('usuarios')}}"><i class="fas fa-table"></i> Pedidos</a></button>
               <button type="button" class="btn btn-light"><a href="{{ url('usuarios/mapa')}}"><i class="fas fa-map-marked-alt"></i> Mapa</a></button>
@@ -131,15 +131,35 @@
               { extend: 'csv', text: '<span style="font-size: 1em; color: DarkGreen;"><i class="fas fa-file-csv"></i></span> CSV' },
               { extend: 'excel', text: '<span style="font-size: 1em; color: DarkGreen;"><i class="fas fa-file-excel"></i></span> Excel' },
               { extend: 'pdf', text: '<span style="font-size: 1em; color: Crimson;"><i class="fas fa-file-pdf"></i></span> PDF' },
-              { extend: 'print', text: '<span style="font-size: 1em; color: DodgerBlue;"><i class="fas fa-print"></i></span> Imprimir' },
-              { text: '<span style="font-size: 1em; color: Tomato;"><i class="fas fa-file-alt"></i></span> Relatório Diário', action: function ( e, dt, button, config ) {window.location = '{{ url('usuarios/pendente')}}';}}
+              { extend: 'print', text: '<span style="font-size: 1em; color: DodgerBlue;"><i class="fas fa-print"></i></span> Imprimir',
+                customize: function ( win ) {
+                    $(win.document.body)
+                        .css( 'font-size', '10pt' )
+                        .prepend(
+                            '<img src="http://sistema.atendemunicipio.com.br/arquivos/9d892e3c0b0420b46de899c88869f52f/layout/moreirasales,1909131427F01.png" style="position:absolute; top:0; left:550;" width="40" height="40"/>'
+                        );
+
+                    $(win.document.body).find( 'table' )
+                        .addClass( 'compact' )
+                        .css( 'font-size', 'inherit' );
+                                            }
+             },
+              { text: '<span style="font-size: 1em; color: Tomato;"><i class="fas fa-file-alt"></i></span> Relatório Diário', action: function ( e, dt, button, config ) {window.location = '{{ url('usuarios/relatorioDiario')}}';}}
                    ]
       });
-
-
   });
 
-  </script>
 
+  //Form opcao para Finalizado
+  function yesnoCheck(that) {
+      if (that.value == "finalizado") {
+    alert("Selecione a data de finalizacao");
+          document.getElementById("ifYes").style.display = "block";
+      } else {
+          document.getElementById("ifYes").style.display = "none";
+      }
+  }
+
+  </script>
 
 </html>

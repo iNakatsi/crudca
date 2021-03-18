@@ -35,3 +35,6 @@ Route::delete('/usuarios/delete/{id}', [App\Http\Controllers\UsuariosController:
 #Route::get('/map', MapLocation::class);
 Route::get('/usuarios/mapa', [App\Http\Controllers\UsuariosController::class, 'mapa'])->middleware('auth');
 Route::get('/usuarios/pendente', [App\Http\Controllers\UsuariosController::class, 'pendente'])->middleware('auth');
+Route::get('/usuarios/relatorioDiario', [App\Http\Controllers\UsuariosController::class, 'relatorioDiario'])->middleware('auth');
+
+Route::get('/usuarios/grafPieAtividade', [App\Http\Controllers\UsuariosController::class, 'grafPieAtividade'])->middleware('auth');

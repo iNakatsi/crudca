@@ -71,7 +71,7 @@
                          <div class="input-group-prepend">
                            <label class="input-group-text" for="andamento">Andamento</label>
                          </div>
-                       <select class="custom-select" name="andamento">
+                       <select class="custom-select" name="andamento" onchange="yesnoCheck(this);">
                          <option value='{{$usuarios->andamento}}' selected>{{$usuarios->andamento}}</option>
                          <option value="solicitado">Solicitado</option>
                          <option value="entregue">Entregue</option>
@@ -79,6 +79,17 @@
                        </select>
                       </div>
                     </div>
+
+                    <!-- Aparecer apenas quando estiver finalizado -->
+                    <div class="form-group" id="ifYes" style="display: none;">
+                          <div class="input-group mb-3">
+                           <div class="input-group-prepend">
+                             <label class="input-group-text" for="data_pedido"><span style="color: Tomato;">Data Finalizado</span></label>
+                           </div>
+                           <input type="date" class="form-control" name="data_finalizado" value="{{$usuarios->data_finalizado}}">
+                        </div>
+                      </div>
+                    <!-- -->
 
                     <div class="form-group">
                         <div class="input-group mb-3">
@@ -160,13 +171,24 @@
                          <div class="input-group-prepend">
                            <label class="input-group-text" for="andamento">Andamento</label>
                          </div>
-                       <select class="custom-select" name="andamento">
+                       <select class="custom-select" name="andamento" onchange="yesnoCheck(this);">
                          <option value='solicitado' selected>Solicitado</option>
                          <option value="entregue">Entregue</option>
                          <option value="finalizado">Finalizado</option>
                        </select>
                       </div>
                     </div>
+
+                    <!-- Aparecer apenas quando estiver finalizado -->
+                    <div class="form-group" id="ifYes" style="display: none;">
+                          <div class="input-group mb-3">
+                           <div class="input-group-prepend">
+                             <label class="input-group-text" for="data_pedido"><span style="color: Tomato;">Data Finalizado</span></label>
+                           </div>
+                           <input type="date" class="form-control" name="data_finalizado">
+                        </div>
+                      </div>
+                    <!-- -->
 
                     <div class="form-group">
                         <div class="input-group mb-3">

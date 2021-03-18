@@ -15,8 +15,12 @@
                     @endif
 
                     <h5>Grafico de atividade</h5>
-
                     <canvas id="myChart" width="400" height="200"></canvas>
+
+                    <?php $result = json_decode($atividades,true);
+                     var_dump($result);
+                    ?>
+
 
                 </div>
             </div>
@@ -31,18 +35,14 @@ var ctx = document.getElementById("myChart").getContext('2d');
 var myChart = new Chart(ctx, {
   type: 'pie',
   data: {
-    labels: ["Green", "Blue", "Gray", "Purple", "Yellow", "Red", "Black"],
+    labels: ["{{$result[0]['atividade']}}", "{{$result[1]['atividade']}}", "{{$result[2]['atividade']}}"],
     datasets: [{
       backgroundColor: [
         "#2ecc71",
         "#3498db",
-        "#95a5a6",
-        "#9b59b6",
-        "#f1c40f",
-        "#e74c3c",
-        "#34495e"
+        "#95a5a6"
       ],
-      data: [12, 19, 3, 17, 28, 24, 7]
+      data: ["{{$result[0]['total']}}", "{{$result[1]['total']}}", "{{$result[2]['total']}}"]
     }]
   }
 });

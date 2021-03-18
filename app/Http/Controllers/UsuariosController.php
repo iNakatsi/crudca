@@ -6,12 +6,22 @@ use Illuminate\Http\Request;
 use App\Models\Usuario;
 use Redirect;
 use Carbon\Carbon;
+use DB;
 
 class UsuariosController extends Controller
 {
     public function index(){
     $usuarios = Usuario::get();
     return view('usuarios.list', ['usuarios' => $usuarios]);
+    }
+
+    public function grafPieAtividade(){
+      $atividades = DB::table('usuarios')
+                 ->select('atividade', DB::raw('count(*) as total'))
+                 ->groupBy('atividade')
+                 ->get();
+
+    return view('home', ['atividades' => $atividades]);
     }
 
     public function mapa(){
@@ -24,7 +34,14 @@ class UsuariosController extends Controller
     }
 
     public function pendente(){
-    $usuarios = Usuario::where('andamento', '=', 'solicitado')->get();
+    $usuarios = Usuario::where('andamento', '=', 'solicitado')->where('data_finalizado', '=', null)->get();
+    return view('usuarios.list', ['usuarios' => $usuarios]);
+    }
+
+    public function relatorioDiario(){
+    $usuarios = Usuario::where('data_finalizado', Carbon::today())->orwhere('data_pedido', Carbon::today())->get();
+    #$usuarios = DB::table('usuarios')->select(DB::raw('*'))->whereRaw('Date(data_finalizado) = CURDATE()')->get();
+    #$usuarios = Usuario::whereDate('data_finalizado', '2021-03-18')->get();
     return view('usuarios.list', ['usuarios' => $usuarios]);
     }
 

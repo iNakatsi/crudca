@@ -22,6 +22,7 @@ class CreateUsuarioTable extends Migration
             $table->string('atividade');
             $table->string('contato');
             $table->date('data_pedido');
+            $table->date('data_finalizado')->nullable();
             $table->string('observacao')->nullable();
             $table->string('andamento');
             $table->timestamps();

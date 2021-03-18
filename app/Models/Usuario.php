@@ -18,6 +18,7 @@ class Usuario extends Model
       'nome',
       'atividade',
       'data_pedido',
+      'data_finalizado',
       'observacao',
       'andamento',
       'contato'

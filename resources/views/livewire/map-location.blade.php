@@ -51,7 +51,7 @@ background: #ee8a65;
   //********** Pop up inicial **********
   var popup = new mapboxgl.Popup({ closeOnClick: false })
         .setLngLat([-53.0102,-24.0509])
-        .setHTML('<i class="fas fa-circle" style="color:#ff4d4d;"></i> aaaafdasfdafdsa<br>fdafdas')
+        .setHTML('<i class="fas fa-circle" style="color:#ff4d4d;"></i> - Ponto indicador de pedidos entregues/abertos<br>')
         .addTo(map);
 
 
