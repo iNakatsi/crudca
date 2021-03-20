@@ -11,18 +11,21 @@ use DB;
 class UsuariosController extends Controller
 {
     public function index(){
-    $usuarios = Usuario::get();
+    $usuarios = Usuario::where('usuario_ad', '=', 'admin')->
+    get();
     return view('usuarios.list', ['usuarios' => $usuarios]);
     }
 
     public function listaTodos(){
-    $usuarios = Usuario::get();
+    $usuarios = Usuario::where('usuario_ad', '=', 'admin')->
+    get();
     return view('usuarios.list', ['usuarios' => $usuarios]);
     }
 
     public function grafPieAtividade(){
       $atividades = DB::table('usuarios')
                  ->select('atividade', DB::raw('count(*) as total'))
+                 ->where('usuario_ad', '=', 'admin')
                  ->groupBy('atividade')
                  ->get();
 
@@ -30,7 +33,8 @@ class UsuariosController extends Controller
     }
 
     public function mapa(){
-      $usuarios = Usuario::get();
+      $usuarios = Usuario::where('usuario_ad', '=', 'admin')->
+      get();
       return view('livewire.map-location',['usuarios' => $usuarios]);
     }
 
@@ -42,7 +46,14 @@ class UsuariosController extends Controller
     $usuarios = Usuario::where('andamento', '=', 'solicitado')->
     where('data_entrega', '=', null)->
     where('data_finalizado', '=', null)->
+    where('usuario_ad', '=', 'admin')->
     orderBy('prioridade','asc')->
+    get();
+    return view('usuarios.list', ['usuarios' => $usuarios]);
+    }
+
+    public function pendenteSolUser(){
+    $usuarios = Usuario::where('usuario_ad', '!=', 'admin')->
     get();
     return view('usuarios.list', ['usuarios' => $usuarios]);
     }
@@ -50,6 +61,7 @@ class UsuariosController extends Controller
     //Relatorio prefeitura
     public function relatorioDiario(){
     $usuarios = Usuario::where('data_entrega', Carbon::today('America/Sao_Paulo'))->
+    where('usuario_ad', '=', 'admin')->
     get();
 
     return view('usuarios.list', ['usuarios' => $usuarios]);
@@ -60,6 +72,7 @@ class UsuariosController extends Controller
     $usuarios = Usuario::where('data_finalizado', Carbon::today('America/Sao_Paulo'))->
     orwhere('data_pedido', Carbon::today('America/Sao_Paulo'))->
     orwhere('data_entrega', Carbon::today('America/Sao_Paulo'))->
+    where('usuario_ad', '=', 'admin')->
     get();
     #$usuarios = DB::table('usuarios')->select(DB::raw('*'))->whereRaw('Date(data_finalizado) = CURDATE()')->get();
     #$usuarios = Usuario::whereDate('data_finalizado', '2021-03-18')->get();

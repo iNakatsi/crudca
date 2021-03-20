@@ -27,6 +27,7 @@ class CreateUsuarioTable extends Migration
             $table->string('observacao')->nullable();
             $table->string('andamento')->default('solicitado');
             $table->string('prioridade')->default('normal');
+            $table->string('usuario_ad');
             $table->timestamps();
         });
     }

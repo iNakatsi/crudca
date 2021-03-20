@@ -27,6 +27,7 @@
                         <th>Data Entrega</th>
                         <th>Data Finalizado</th>
                         <th>Prioridade</th>
+                        <th>Solicitado por</th>
                         <th>Observação</th>
                         <th></th>
                         <th></th>
@@ -46,6 +47,7 @@
                         <td>{{$u->data_entrega}}</td>
                         <td>{{$u->data_finalizado}}</td>
                         <td>{{$u->prioridade}}</td>
+                        <td>{{$u->usuario_ad}}</td>
                         <td>{{$u->observacao}}</td>
                         <td><a href="{{$u->id}}/edit" class="btn btn-light"><i class="far fa-edit"></i></a></td>
                         <td>

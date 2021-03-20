@@ -1,11 +1,29 @@
 @extends('layouts.app')
 
+<?php
+try{
+if ($usuarios->usuario_ad == "admin") {
+  $h5_titulo = "Cadastro de caçamba";
+  $btn_form = "Atualizar";
+  $btn_color = "btn btn-primary btn-block";
+} else {
+  $h5_titulo = "Cadastro externo de caçamba";
+  $btn_form = "Aprovar Solicitação";
+  $btn_color = "btn btn-danger btn-block";
+}
+} catch (Exception $e) {
+  $h5_titulo = "Cadastro de caçamba";
+  $btn_form = "Atualizar";
+  $btn_color = "btn btn-primary btn-block";
+}
+?>
+
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header text-center"><h5><i class="fas fa-user-plus"></i> Cadastro de caçamba</h5></div>
+                <div class="card-header text-center"><h5><i class="fas fa-user-plus"></i> {{$h5_titulo}}</h5></div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -17,6 +35,16 @@
                     @if( Request::is('*/edit'))
                     <form action="{{url('usuarios/update')}}/{{$usuarios->id}}" method="post">
                     @csrf
+
+                    <div class="form-group">
+                        <div class="input-group mb-3">
+                         <div class="input-group-prepend">
+                           <label class="input-group-text" for="usuario_ad">Solicitador: {{$usuarios->usuario_ad}}</label>
+                         </div>
+                         <input type="text" name='usuario_ad' class="form-control" value="admin" readonly>
+                      </div>
+                    </div>
+
                     <div class="form-group">
                         <div class="input-group mb-3">
                          <div class="input-group-prepend">
@@ -134,13 +162,12 @@
                       </div>
                     </div>
 
-                    <button type="submit" class="btn btn-primary btn-block">Atualizar</button>
+                    <button type="submit" class="{{$btn_color}}">{{$btn_form}}</button>
 
                     </form>
 
                     @else
 
-                    {{Request::ip()}}
 
                     <form action="{{url('usuarios/add')}}" method="post">
                     @csrf
@@ -160,6 +187,16 @@
                     <div class="form-group">
                       <input type="hidden" name='coordenada1' class="form-control">
                     </div>
+
+                    @guest
+                    <div class="form-group">
+                      <input type="hidden" name='usuario_ad' class="form-control" value="{{Request::ip()}}">
+                    </div>
+                    @else
+                    <div class="form-group">
+                      <input type="hidden" name='usuario_ad' class="form-control" value="admin">
+                    </div>
+                    @endguest
 
                     <div class="form-group">
                         <div class="input-group mb-3">

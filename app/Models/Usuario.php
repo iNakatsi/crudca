@@ -23,6 +23,7 @@ class Usuario extends Model
       'observacao',
       'andamento',
       'contato',
-      'prioridade'
+      'prioridade',
+      'usuario_ad'
     ];
 }

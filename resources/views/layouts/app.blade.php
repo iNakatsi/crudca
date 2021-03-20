@@ -180,7 +180,8 @@ $(document).ready(function() {
           { text: '<span style="font-size: 1em; color: Grey;"><i class="fas fa-database"></i></span> Todos', action: function ( e, dt, button, config ) {window.location = '{{ url('usuarios')}}';}},
           { text: '<span style="font-size: 1em; color: Grey;"><i class="fas fa-calendar-day"></i></span> Relatório Hoje', action: function ( e, dt, button, config ) {window.location = '{{ url('usuarios/relatorioHoje')}}';}},
           { text: '<span style="font-size: 1em; color: Grey;"><i class="fas fa-file-alt"></i></span> Relatório Diário', action: function ( e, dt, button, config ) {window.location = '{{ url('usuarios/relatorioDiario')}}';}},
-          { text: '<span style="font-size: 1em; color: Grey;"><i class="fas fa-clock"></i></span> Pendentes Entrega', action: function ( e, dt, button, config ) {window.location = '{{ url('usuarios/pendente')}}';}}
+          { text: '<span style="font-size: 1em; color: Grey;"><i class="fas fa-clock"></i></span> Pendentes Entrega', action: function ( e, dt, button, config ) {window.location = '{{ url('usuarios/pendente')}}';}},
+          { text: '<span style="font-size: 1em; color: Crimson;"><i class="fas fa-clock"></i></span> Pendentes solicitacao usuario', action: function ( e, dt, button, config ) {window.location = '{{ url('usuarios/pendenteSolUser')}}';}}
         ],
         select: true
     });
