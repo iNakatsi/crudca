@@ -24,7 +24,9 @@
                         <th>Contato</th>
                         <th>Andamento</th>
                         <th>Data Pedido</th>
+                        <th>Data Entrega</th>
                         <th>Data Finalizado</th>
+                        <th>Prioridade</th>
                         <th>Observação</th>
                         <th></th>
                         <th></th>
@@ -41,7 +43,9 @@
                         <td>{{$u->contato}}</td>
                         <td>{{$u->andamento}}</td>
                         <td>{{$u->data_pedido}}</td>
+                        <td>{{$u->data_entrega}}</td>
                         <td>{{$u->data_finalizado}}</td>
+                        <td>{{$u->prioridade}}</td>
                         <td>{{$u->observacao}}</td>
                         <td><a href="usuarios/{{$u->id}}/edit" class="btn btn-light"><i class="far fa-edit"></i></a></td>
                         <td>

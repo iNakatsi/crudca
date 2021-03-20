@@ -18,9 +18,11 @@ class Usuario extends Model
       'nome',
       'atividade',
       'data_pedido',
+      'data_entrega',
       'data_finalizado',
       'observacao',
       'andamento',
-      'contato'
+      'contato',
+      'prioridade'
     ];
 }

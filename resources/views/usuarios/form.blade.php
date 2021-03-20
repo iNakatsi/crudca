@@ -53,6 +53,7 @@
                          <option value="limpeza">Limpeza</option>
                          <option value="arvore">Arvore</option>
                          <option value="construção">Construção</option>
+                         <option value="terra">Construção</option>
                        </select>
                       </div>
                     </div>
@@ -80,11 +81,22 @@
                       </div>
                     </div>
 
-                    <!-- Aparecer apenas quando estiver finalizado -->
-                    <div class="form-group" id="ifYes" style="display: none;">
+                    <!-- Aparecer apenas quando estiver como entregue -->
+                    <div class="form-group" id="entrega_data_js" style="display: none;">
                           <div class="input-group mb-3">
                            <div class="input-group-prepend">
-                             <label class="input-group-text" for="data_pedido"><span style="color: Tomato;">Data Finalizado</span></label>
+                             <label class="input-group-text" for="data_entrega"><span style="color: Tomato;">Data Entrega</span></label>
+                           </div>
+                           <input type="date" class="form-control" name="data_entrega" value="{{$usuarios->data_entrega}}">
+                        </div>
+                      </div>
+                    <!-- -->
+
+                    <!-- Aparecer apenas quando estiver finalizado -->
+                    <div class="form-group" id="finalizado_data_js" style="display: none;">
+                          <div class="input-group mb-3">
+                           <div class="input-group-prepend">
+                             <label class="input-group-text" for="data_finalizado"><span style="color: Tomato;">Data Finalizado</span></label>
                            </div>
                            <input type="date" class="form-control" name="data_finalizado" value="{{$usuarios->data_finalizado}}">
                         </div>
@@ -109,11 +121,24 @@
                       </div>
                     </div>
 
-                    <button type="submit" class="btn btn-primary btn-block">Cadastrar</button>
+                    <div class="form-group">
+                        <div class="input-group mb-3">
+                         <div class="input-group-prepend">
+                           <label class="input-group-text" for="prioridade">Prioridade</label>
+                         </div>
+                       <select class="custom-select" name="prioridade" onchange="msngPrioridade(this);">
+                         <option value='{{$usuarios->prioridade}}' selected>{{$usuarios->prioridade}}</option>
+                         <option value="normal">Normal</option>
+                         <option value="alta">Alta</option>
+                       </select>
+                      </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-block">Atualizar</button>
+
                     </form>
 
                     @else
-
 
                     <form action="{{url('usuarios/add')}}" method="post">
                     @csrf
@@ -153,6 +178,7 @@
                          <option value="limpeza">Limpeza</option>
                          <option value="arvore">Arvore</option>
                          <option value="construção">Construção</option>
+                         <option value="terra">Terra</option>
                        </select>
                       </div>
                     </div>
@@ -179,11 +205,22 @@
                       </div>
                     </div>
 
-                    <!-- Aparecer apenas quando estiver finalizado -->
-                    <div class="form-group" id="ifYes" style="display: none;">
+                    <!-- Aparecer apenas quando estiver entrega -->
+                    <div class="form-group" id="entrega_data_js" style="display: none;">
                           <div class="input-group mb-3">
                            <div class="input-group-prepend">
-                             <label class="input-group-text" for="data_pedido"><span style="color: Tomato;">Data Finalizado</span></label>
+                             <label class="input-group-text" for="data_entrega"><span style="color: Tomato;">Data da Entrega</span></label>
+                           </div>
+                           <input type="date" class="form-control" name="data_entrega">
+                        </div>
+                      </div>
+                    <!-- -->
+
+                    <!-- Aparecer apenas quando estiver finalizado -->
+                    <div class="form-group" id="finalizado_data_js" style="display: none;">
+                          <div class="input-group mb-3">
+                           <div class="input-group-prepend">
+                             <label class="input-group-text" for="data_finalizado"><span style="color: Tomato;">Data Finalizado</span></label>
                            </div>
                            <input type="date" class="form-control" name="data_finalizado">
                         </div>
@@ -208,11 +245,29 @@
                       </div>
                     </div>
 
+                    <div class="form-group">
+                        <div class="input-group mb-3">
+                         <div class="input-group-prepend">
+                           <label class="input-group-text" for="prioridade">Prioridade</label>
+                         </div>
+                       <select class="custom-select" name="prioridade" onchange="msngPrioridade(this);">
+                         <option value="normal" selected>Normal</option>
+                         <option value="alta">Alta</option>
+                       </select>
+                      </div>
+                    </div>
+
                     <button type="submit" class="btn btn-primary btn-block">Cadastrar</button>
+
                     </form>
+
+
+
                     @endif
 
                 </div>
+                    <!-- Mensagem de alerta de prioridade -->
+                    <div class="alert alert-danger" role="alert" style="display: none;" id="pedido_msg">Pedido com prioridade alta!</div>
             </div>
         </div>
     </div>
