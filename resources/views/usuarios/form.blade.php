@@ -176,7 +176,7 @@ if ($usuarios->usuario_ad == "admin") {
                          <div class="input-group-prepend">
                            <label class="input-group-text" for="endereco">Endereco</label>
                          </div>
-                         <input type="text" name='endereco' class="form-control" placeholder="Avenida Otto Macedo 629">
+                         <input type="text" name='endereco' class="form-control" placeholder="Rua João Theotonio Moreira Sales Neto 600">
                       </div>
                     </div>
 
