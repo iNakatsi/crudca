@@ -53,7 +53,7 @@
                          <option value="limpeza">Limpeza</option>
                          <option value="arvore">Arvore</option>
                          <option value="construção">Construção</option>
-                         <option value="terra">Construção</option>
+                         <option value="terra">Terra</option>
                        </select>
                       </div>
                     </div>
@@ -140,6 +140,8 @@
 
                     @else
 
+                    {{Request::ip()}}
+
                     <form action="{{url('usuarios/add')}}" method="post">
                     @csrf
                     <div class="form-group">
@@ -147,7 +149,7 @@
                          <div class="input-group-prepend">
                            <label class="input-group-text" for="endereco">Endereco</label>
                          </div>
-                         <input type="text" name='endereco' class="form-control">
+                         <input type="text" name='endereco' class="form-control" placeholder="Avenida Otto Macedo 629">
                       </div>
                     </div>
 
@@ -188,10 +190,12 @@
                          <div class="input-group-prepend">
                            <label class="input-group-text" for="contato">Contato</label>
                          </div>
-                         <input type="text" name='contato' class="form-control">
+                         <input type="tel" name='contato' class="form-control" placeholder="(44)3532-8100" value="(44)">
                       </div>
                     </div>
 
+                    @guest
+                    @else
                     <div class="form-group">
                         <div class="input-group mb-3">
                          <div class="input-group-prepend">
@@ -204,6 +208,7 @@
                        </select>
                       </div>
                     </div>
+                    @endguest
 
                     <!-- Aparecer apenas quando estiver entrega -->
                     <div class="form-group" id="entrega_data_js" style="display: none;">
@@ -227,6 +232,8 @@
                       </div>
                     <!-- -->
 
+                    @guest
+                    @else
                     <div class="form-group">
                         <div class="input-group mb-3">
                          <div class="input-group-prepend">
@@ -235,6 +242,7 @@
                          <input type="date" class="form-control" name="data_pedido">
                       </div>
                     </div>
+                    @endguest
 
                     <div class="form-group">
                         <div class="input-group mb-3">
@@ -245,6 +253,8 @@
                       </div>
                     </div>
 
+                    @guest
+                    @else
                     <div class="form-group">
                         <div class="input-group mb-3">
                          <div class="input-group-prepend">
@@ -256,12 +266,11 @@
                        </select>
                       </div>
                     </div>
+                    @endguest
 
                     <button type="submit" class="btn btn-primary btn-block">Cadastrar</button>
 
                     </form>
-
-
 
                     @endif
 

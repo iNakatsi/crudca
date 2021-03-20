@@ -21,12 +21,12 @@ class CreateUsuarioTable extends Migration
             $table->string('nome');
             $table->string('atividade');
             $table->string('contato');
-            $table->date('data_pedido');
+            $table->date('data_pedido')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->date('data_entrega')->nullable();
             $table->date('data_finalizado')->nullable();
             $table->string('observacao')->nullable();
-            $table->string('andamento');
-            $table->string('prioridade');
+            $table->string('andamento')->default('solicitado');
+            $table->string('prioridade')->default('normal');
             $table->timestamps();
         });
     }

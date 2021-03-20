@@ -41,13 +41,18 @@
               </a>
               </nav>
 
+              @guest
+              <div class="btn-group" role="group">
+              <button type="button" class="btn btn-light"><a href="{{ url('usuarios/new')}}"><i class="fas fa-plus-square"></i> Solicitar Caçamba</a></button>
+              </div>
+              @else
               <div class="btn-group" role="group">
               <button type="button" class="btn btn-light"><a href="{{ url('usuarios/grafPieAtividade')}}"><i class="fas fa-home"></i> Início</a></button>
               <button type="button" class="btn btn-light"><a href="{{ url('usuarios/new')}}"><i class="fas fa-user-plus"></i> Cadastrar</a></button>
               <button type="button" class="btn btn-light"><a href="{{ url('usuarios')}}"><i class="fas fa-table"></i> Pedidos</a></button>
               <button type="button" class="btn btn-light"><a href="{{ url('usuarios/mapa')}}"><i class="fas fa-map-marked-alt"></i> Mapa</a></button>
               </div>
-
+              @endguest
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>

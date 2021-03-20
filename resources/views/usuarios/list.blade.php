@@ -47,9 +47,9 @@
                         <td>{{$u->data_finalizado}}</td>
                         <td>{{$u->prioridade}}</td>
                         <td>{{$u->observacao}}</td>
-                        <td><a href="usuarios/{{$u->id}}/edit" class="btn btn-light"><i class="far fa-edit"></i></a></td>
+                        <td><a href="{{$u->id}}/edit" class="btn btn-light"><i class="far fa-edit"></i></a></td>
                         <td>
-                          <form action="usuarios/delete/{{$u->id}}" method="post">
+                          <form action="delete/{{$u->id}}" method="post">
                             @csrf
                             @method('delete')
                             <button class="btn btn-outline-danger"><i class="fas fa-trash"></i></button>

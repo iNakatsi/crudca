@@ -15,6 +15,11 @@ class UsuariosController extends Controller
     return view('usuarios.list', ['usuarios' => $usuarios]);
     }
 
+    public function listaTodos(){
+    $usuarios = Usuario::get();
+    return view('usuarios.list', ['usuarios' => $usuarios]);
+    }
+
     public function grafPieAtividade(){
       $atividades = DB::table('usuarios')
                  ->select('atividade', DB::raw('count(*) as total'))

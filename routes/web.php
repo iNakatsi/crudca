@@ -27,8 +27,8 @@ Route::group(['middleware' => 'web'], function(){
 #/usuarios/new sera roteado pelo app/Http/Controllers/UsuariosController.php com a funcao nome new()
 */
 Route::get('/usuarios', [App\Http\Controllers\UsuariosController::class, 'index'])->middleware('auth');
-Route::get('/usuarios/new', [App\Http\Controllers\UsuariosController::class, 'new'])->middleware('auth');
-Route::post('/usuarios/add', [App\Http\Controllers\UsuariosController::class, 'add'])->middleware('auth');
+Route::get('/usuarios/new', [App\Http\Controllers\UsuariosController::class, 'new']);
+Route::post('/usuarios/add', [App\Http\Controllers\UsuariosController::class, 'add']);
 Route::get('/usuarios/{id}/edit', [App\Http\Controllers\UsuariosController::class, 'edit'])->middleware('auth');
 Route::post('/usuarios/update/{id}', [App\Http\Controllers\UsuariosController::class, 'update'])->middleware('auth');
 Route::delete('/usuarios/delete/{id}', [App\Http\Controllers\UsuariosController::class, 'delete'])->middleware('auth');
@@ -39,8 +39,25 @@ Route::get('/usuarios/relatorioDiario', [App\Http\Controllers\UsuariosController
 Route::get('/usuarios/relatorioHoje', [App\Http\Controllers\UsuariosController::class, 'relatorioHoje'])->middleware('auth');
 
 Route::get('/usuarios/grafPieAtividade', [App\Http\Controllers\UsuariosController::class, 'grafPieAtividade'])->middleware('auth');
+Route::get('/usuarios/listaTodos', [App\Http\Controllers\UsuariosController::class, 'listaTodos'])->middleware('auth');
 
 #Redirecionar pagina principal
-Route::get('/', function () {
+Route::get('/home', function () {
     return redirect('usuarios/grafPieAtividade');
 });
+
+#Redirecionar pagina caso seja usuuario convidados
+Route::get('/',function(){
+    if(Auth::guest()){
+        return redirect('/usuarios/new');
+    }
+    return redirect('/usuarios/grafPieAtividade');
+});
+
+#Redirecionar pagina caso seja usuuario convidados
+Route::get('/usuarios',function(){
+    if(Auth::guest()){
+        return redirect('usuarios/new');
+      }
+      return redirect('/usuarios/listaTodos');
+  });
