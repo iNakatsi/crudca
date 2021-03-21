@@ -17,7 +17,17 @@ if ($usuarios->usuario_ad == "admin") {
   $btn_color = "btn btn-primary btn-block";
 }
 
-    $ipaddress = $_SERVER['REMOTE_ADDR'] . "  - IP";
+function getIpAddress() {
+  if (isset($_SERVER['HTTP_X_FORWARDED_FOR'])) {
+      $ipAddresses = explode(',', $_SERVER['HTTP_X_FORWARDED_FOR']);
+      return trim(end($ipAddresses));
+  }
+  else {
+      return $_SERVER['REMOTE_ADDR'];
+  }
+}
+
+    $ipaddress = getIpAddress();
 
 //$details = json_decode(file_get_contents("http://ipinfo.io/{$ip}/json"));
 
