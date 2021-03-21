@@ -17,8 +17,9 @@ if ($usuarios->usuario_ad == "admin") {
   $btn_color = "btn btn-primary btn-block";
 }
 
-$ip = $_SERVER['REMOTE_ADDR'];
-$details = json_decode(file_get_contents("http://ipinfo.io/{$ip}/json"));
+    $ipaddress = $_SERVER['REMOTE_ADDR'] . "  - IP";
+
+//$details = json_decode(file_get_contents("http://ipinfo.io/{$ip}/json"));
 
 ?>
 
@@ -36,7 +37,7 @@ $details = json_decode(file_get_contents("http://ipinfo.io/{$ip}/json"));
                         </div>
                     @endif
 
-                    <?php echo var_dump($details) ?>
+                    <?php echo $ipaddress;?>
 
                     @if( Request::is('*/edit'))
                     <form action="{{url('usuarios/update')}}/{{$usuarios->id}}" method="post">
