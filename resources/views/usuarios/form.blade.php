@@ -31,7 +31,7 @@ function getIpAddress() {
 }
 
 //"189.113.209.1"
-$ipaddress = "189.113.209.1";
+$ipaddress = get_ip();
 //Servico de rastreamento de informacoes IPINFO
 #$details = json_decode(file_get_contents("http://ipinfo.io/{$ipaddress}/json"));
 //Servico de rastreamento de informacoes GEOPLUGIN(Mais preciso na geolocalizacao)
