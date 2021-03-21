@@ -16,6 +16,10 @@ if ($usuarios->usuario_ad == "admin") {
   $btn_form = "Atualizar";
   $btn_color = "btn btn-primary btn-block";
 }
+
+$ip = $_SERVER['REMOTE_ADDR'];
+$details = json_decode(file_get_contents("http://ipinfo.io/{$ip}/json"));
+
 ?>
 
 @section('content')
@@ -31,6 +35,8 @@ if ($usuarios->usuario_ad == "admin") {
                             {{ session('status') }}
                         </div>
                     @endif
+
+                    <?php echo var_dump($details) ?>
 
                     @if( Request::is('*/edit'))
                     <form action="{{url('usuarios/update')}}/{{$usuarios->id}}" method="post">
