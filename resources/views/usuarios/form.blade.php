@@ -225,9 +225,9 @@ $navegadordousuario = get_browsers();
                   <span class='badge badge-secondary'>{{$sodousuario}}</span>
                   <span class='badge badge-secondary'>{{$navegadordousuario}}</span>
                   @if( $geoPlugin_array["geoplugin_region"] === "Parana")
-                    Pagina Disponivel Paraná
+                    |  <i class="fas fa-grip-horizontal"></i><span style="color: Tomato;"><i class="fas fa-check-circle"></i></i>Região não compatível</span>
                   @else
-                    <span style="color: Tomato;"><i class="fas fa-exclamation-triangle"></i> Região não compatível</span>
+                    |  <i class="fas fa-grip-horizontal"></i><span style="color: Tomato;"><i class="fas fa-exclamation-triangle"></i>Região não compatível</span>
                   @endif
                 </div>
 
