@@ -33,6 +33,7 @@
 <body>
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+          <span style="font-size: 0.5em; color: Grey;">N<i class="fas fa-terminal"></i></span>
             <div class="container">
               <nav class="navbar navbar-light">
               <a class="navbar-brand" href="{{ url('/') }}">

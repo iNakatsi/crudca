@@ -218,16 +218,16 @@ $navegadordousuario = get_browsers();
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header text-center"><h5><i class="fas fa-user-plus"></i> {{$h5_titulo}}</h5>
-                  <span class='badge badge-secondary'><i class="fas fa-at"></i>{{$geoPlugin_array["geoplugin_request"]}}</span>
-                  <span class='badge badge-secondary'><i class="fas fa-map-marker-alt"></i>{{$geoPlugin_array["geoplugin_city"]}}</span>
-                  <span class='badge badge-secondary'><i class="fas fa-map-marked-alt"></i>{{$geoPlugin_array["geoplugin_region"]}}</span>
-                  <span class='badge badge-secondary'><i class="fas fa-hdd"></i>{{$devdousuario}}</span>
-                  <span class='badge badge-secondary'><i class="fab fa-windows"></i>{{$sodousuario}}</span>
-                  <span class='badge badge-secondary'><i class="fas fa-window-restore"></i>{{$navegadordousuario}}</span>
+                  <span class='badge badge-secondary'><i class="fas fa-at"></i> {{$geoPlugin_array["geoplugin_request"]}}</span>
+                  <span class='badge badge-secondary'><i class="fas fa-map-marker-alt"></i> {{$geoPlugin_array["geoplugin_city"]}}</span>
+                  <span class='badge badge-secondary'><i class="fas fa-map-marked-alt"></i> {{$geoPlugin_array["geoplugin_region"]}}</span>
+                  <span class='badge badge-secondary'><i class="fas fa-hdd"></i> {{$devdousuario}}</span>
+                  <span class='badge badge-secondary'><i class="fab fa-windows"></i> {{$sodousuario}}</span>
+                  <span class='badge badge-secondary'><i class="fas fa-window-restore"></i> {{$navegadordousuario}}</span>
                   @if( $geoPlugin_array["geoplugin_region"] === "Parana") Gainsboro
-                    <span style="color: Grey;"><i class="fas fa-grip-horizontal"></i></span>  <span style="color: Tomato;"><i class="fas fa-check-circle"></i></i>Região não compatível</span>
+                  &nbsp;&nbsp;<span style="color: Grey;"><i class="fas fa-slash"></i>&nbsp;&nbsp;&nbsp;<span style="color: Tomato;"><i class="fas fa-check-circle"></i></i> Região não compatível</span>
                   @else
-                    <span style="color: Grey;"><i class="fas fa-grip-horizontal"></i></span>  <span style="color: Tomato;"><i class="fas fa-exclamation-triangle"></i>Região não compatível</span>
+                  &nbsp;&nbsp;<span style="color: Grey;"><i class="fas fa-slash"></i>&nbsp;&nbsp;&nbsp;<span style="color: Tomato;"><i class="fas fa-exclamation-triangle"></i> Região não compatível</span>
                   @endif
                 </div>
 
