@@ -233,13 +233,11 @@ $navegadordousuario = get_browsers();
                         </div>
                     @endif
 
-                    <!-- <?php var_dump($geoPlugin_array);?>
-                    <br><br> -->
 
-                    @if( $geoPlugin_array["geoplugin_region"] === "Paraná")
+                    @if( $geoPlugin_array["geoplugin_region"] === "Parana")
                       Pagina Disponivel Paraná
                     @else
-                      Pagina Indisponivel
+                      <span style="color: Tomato;"><i class="fas fa-exclamation-triangle"></i> Região não compatível</span>
                     @endif
 
                     @if( Request::is('*/edit'))
