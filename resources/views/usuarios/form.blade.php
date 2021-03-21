@@ -224,10 +224,10 @@ $navegadordousuario = get_browsers();
                   <span class='badge badge-secondary'><i class="fas fa-hdd"></i>{{$devdousuario}}</span>
                   <span class='badge badge-secondary'><i class="fab fa-windows"></i>{{$sodousuario}}</span>
                   <span class='badge badge-secondary'><i class="fas fa-window-restore"></i>{{$navegadordousuario}}</span>
-                  @if( $geoPlugin_array["geoplugin_region"] === "Parana")
-                    <i class="fas fa-grip-horizontal"></i>  <span style="color: Tomato;"><i class="fas fa-check-circle"></i></i>Região não compatível</span>
+                  @if( $geoPlugin_array["geoplugin_region"] === "Parana") Gainsboro
+                    <span style="color: Gainsboro;"><i class="fas fa-grip-horizontal"></i></span>  <span style="color: Tomato;"><i class="fas fa-check-circle"></i></i>Região não compatível</span>
                   @else
-                    <i class="fas fa-grip-horizontal"></i>  <span style="color: Tomato;"><i class="fas fa-exclamation-triangle"></i>Região não compatível</span>
+                    <span style="color: Gainsboro;"><i class="fas fa-grip-horizontal"></i></span>  <span style="color: Tomato;"><i class="fas fa-exclamation-triangle"></i>Região não compatível</span>
                   @endif
                 </div>
 
