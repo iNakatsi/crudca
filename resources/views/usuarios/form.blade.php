@@ -1,6 +1,8 @@
 @extends('layouts.app')
 
 <?php
+
+//Bloco de mensagens conforme autenticacao de usuario
 try{
 if ($usuarios->usuario_ad == "admin") {
   $h5_titulo = "Cadastro de caçamba";
@@ -17,6 +19,7 @@ if ($usuarios->usuario_ad == "admin") {
   $btn_color = "btn btn-primary btn-block";
 }
 
+//funcao para pegar ip
 function getIpAddress() {
   if (isset($_SERVER['HTTP_X_FORWARDED_FOR'])) {
       $ipAddresses = explode(',', $_SERVER['HTTP_X_FORWARDED_FOR']);
@@ -26,8 +29,9 @@ function getIpAddress() {
       return $_SERVER['REMOTE_ADDR'];
   }
 }
+$ipaddress = getIpAddress();
+$details = json_decode(file_get_contents("http://ipinfo.io/{$ipaddress}/json"));
 
-    $ipaddress = getIpAddress();
 
 //$details = json_decode(file_get_contents("http://ipinfo.io/{$ip}/json"));
 
@@ -47,7 +51,7 @@ function getIpAddress() {
                         </div>
                     @endif
 
-                    <?php echo $ipaddress;?>
+                    <?php var_dump($details);?>
 
                     @if( Request::is('*/edit'))
                     <form action="{{url('usuarios/update')}}/{{$usuarios->id}}" method="post">
