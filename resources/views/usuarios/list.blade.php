@@ -62,7 +62,9 @@
                     </tbody>
                   </table>
 
-
+                  <kbd><kbd>CTRL</kbd> + <kbd>clique(esquerdo)</kbd></kbd> Para multipla seleção
+                  <br>
+                  <kbd><kbd>SHIFT</kbd> + <kbd>clique(esquerdo)</kbd></kbd> Para multipla seleção vertical
 
                 </div>
             </div>

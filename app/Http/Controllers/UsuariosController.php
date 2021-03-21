@@ -81,6 +81,20 @@ class UsuariosController extends Controller
 
     /* Funcao para adicionar formulario no banco de dados,verificar endereco e atribuir coordenadas */
     public function add( Request $request ){
+
+      $validatedData = $request->validate([
+        'endereco' => 'required',
+        'nome' => 'required',
+        'atividade' => 'required',
+        'contato' => 'required'
+    ], [
+        'endereco.required' => 'Name is required',
+        'nome.required' => 'Password is required',
+        'atividade.required' => 'Name is required',
+        'contato.required' => 'Password is required'
+    ]);
+
+
       $usuario = new Usuario;
 
       $mapboxinfo = $this->mapBoxGeoCoding($request->input('endereco'));
@@ -89,11 +103,14 @@ class UsuariosController extends Controller
       $request['coordenada1'] = $mapboxinfo['1'];
 
       $usuario = $usuario -> create($request->all());
-      $mapboxinfo = $request->input('endereco');
 
-      $usuarios = Usuario::get();
+      #$mapboxinfo = $request->input('endereco');
+      #$usuarios = Usuario::get();
 
-      return Redirect::to('/usuarios');
+
+
+      return back()->with('registrado', 'Solicitação enviada com sucesso.');
+      #return Redirect::to('/usuarios');
       #return view('usuarios.list', ['mapboxinfo' => $mapboxinfo, 'usuarios' => $usuarios ]);
 
     }
