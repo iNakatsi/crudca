@@ -31,6 +31,7 @@ function getIpAddress() {
 }
 $ipaddress = getIpAddress();
 $details = json_decode(file_get_contents("http://ipinfo.io/{$ipaddress}/json"));
+$geoPlugin_array = unserialize( file_get_contents('http://www.geoplugin.net/php.gp?ip=' . ipaddress) );
 
 
 //$details = json_decode(file_get_contents("http://ipinfo.io/{$ip}/json"));
@@ -51,7 +52,7 @@ $details = json_decode(file_get_contents("http://ipinfo.io/{$ipaddress}/json"));
                         </div>
                     @endif
 
-                    <?php var_dump($details);?>
+                    <?php var_dump($geoPlugin_array);?>
 
                     @if( Request::is('*/edit'))
                     <form action="{{url('usuarios/update')}}/{{$usuarios->id}}" method="post">
