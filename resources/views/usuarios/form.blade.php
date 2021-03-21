@@ -204,7 +204,6 @@ function get_device(){
 
   }
 
-
 $ipdousuario = get_ip();
 $sodousuario = get_os();
 $devdousuario = get_device();
@@ -413,7 +412,7 @@ $navegadordousuario = get_browsers();
 
                     @guest
                     <div class="form-group">
-                      <input type="hidden" name='usuario_ad' class="form-control" value="{{Request::ip()}}">
+                      <input type="hidden" name='usuario_ad' class="form-control" value="{{$geoPlugin_array['geoplugin_request']}}">
                     </div>
                     @else
                     <div class="form-group">
