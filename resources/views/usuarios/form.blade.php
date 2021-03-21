@@ -224,6 +224,11 @@ $navegadordousuario = get_browsers();
                   <span class='badge badge-secondary'>{{$devdousuario}}</span>
                   <span class='badge badge-secondary'>{{$sodousuario}}</span>
                   <span class='badge badge-secondary'>{{$navegadordousuario}}</span>
+                  @if( $geoPlugin_array["geoplugin_region"] === "Parana")
+                    Pagina Disponivel Paraná
+                  @else
+                    <span style="color: Tomato;"><i class="fas fa-exclamation-triangle"></i> Região não compatível</span>
+                  @endif
                 </div>
 
                 <div class="card-body">
@@ -231,13 +236,6 @@ $navegadordousuario = get_browsers();
                         <div class="alert alert-success" role="alert">
                             {{ session('status') }}
                         </div>
-                    @endif
-
-
-                    @if( $geoPlugin_array["geoplugin_region"] === "Parana")
-                      Pagina Disponivel Paraná
-                    @else
-                      <span style="color: Tomato;"><i class="fas fa-exclamation-triangle"></i> Região não compatível</span>
                     @endif
 
                     @if( Request::is('*/edit'))
