@@ -20,6 +20,7 @@ if ($usuarios->usuario_ad == "admin") {
 }
 
 //funcao para pegar ip
+/*
 function getIpAddress() {
   if (isset($_SERVER['HTTP_X_FORWARDED_FOR'])) {
       $ipAddresses = explode(',', $_SERVER['HTTP_X_FORWARDED_FOR']);
@@ -29,6 +30,7 @@ function getIpAddress() {
       return $_SERVER['REMOTE_ADDR'];
   }
 }
+*/
 
 //"189.113.209.1"
 $ipaddress = get_ip();
@@ -40,7 +42,6 @@ $geoPlugin_array = unserialize( file_get_contents('http://www.geoplugin.net/php.
 $test = "<span class='badge badge-secondary'>" . $geoPlugin_array["geoplugin_request"] . "</span>";
 $test2 = "<span class='badge badge-info'>" . $geoPlugin_array["geoplugin_city"] . "</span>";
 $test3 = "<span class='badge badge-info'>" . $geoPlugin_array["geoplugin_region"] . "</span>";
-
 
 // -----------------------------------------------------------------------------------
 
@@ -204,10 +205,10 @@ function get_device(){
   }
 
 
-$ipdousuario = get_ip() . " - IP";
-$sodousuario = get_os() . " - OS";
-$devdousuario = get_device() . " - DEV";
-$navegadordousuario = get_browsers() . " - NAV";
+$ipdousuario = get_ip();
+$sodousuario = get_os();
+$devdousuario = get_device();
+$navegadordousuario = get_browsers();
 
 
 ?>
@@ -221,10 +222,8 @@ $navegadordousuario = get_browsers() . " - NAV";
                   <span class='badge badge-secondary'>{{$geoPlugin_array["geoplugin_request"]}}</span>
                   <span class='badge badge-secondary'>{{$geoPlugin_array["geoplugin_city"]}}</span>
                   <span class='badge badge-secondary'>{{$geoPlugin_array["geoplugin_region"]}}</span>
-
-                  <span class='badge badge-secondary'>{{$ipdousuario}}</span>
-                  <span class='badge badge-secondary'>{{$sodousuario}}</span>
                   <span class='badge badge-secondary'>{{$devdousuario}}</span>
+                  <span class='badge badge-secondary'>{{$sodousuario}}</span>
                   <span class='badge badge-secondary'>{{$navegadordousuario}}</span>
                 </div>
 
