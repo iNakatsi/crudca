@@ -560,7 +560,7 @@ $cont_fila_solicitacao = json_decode($fila_solicitacao ?? '',true);
                        <span class="text-danger">{{$errors->first('g-recaptcha-response')}}</span>
                    @endif
 
-                    <button type="submit" class="btn btn-primary btn-block">Cadastrar1</button>
+                    <button type="submit" class="btn btn-primary btn-block">Cadastrar</button>
 
                     </form>
 

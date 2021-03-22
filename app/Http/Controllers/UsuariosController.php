@@ -94,7 +94,7 @@ class UsuariosController extends Controller
         'nome' => 'required|max:70',
         'atividade' => 'required|max:20',
         'contato' => 'required',
-        'observacao' => 'required|max:150',
+        'observacao' => 'max:150',
         'data_pedido' => 'required',
         'g-recaptcha-response' => 'required|captcha'
     ], [
@@ -107,6 +107,7 @@ class UsuariosController extends Controller
         'nome.max' => 'Limite de caracteres atingido, maximo 70',
         'g-recaptcha-response.required' => 'You must check the reCAPTCHA.',
         'g-recaptcha-response.captcha' => 'Captcha error! try again later or contact site admin.'
+
     ]);
 
 
