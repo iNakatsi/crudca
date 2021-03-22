@@ -405,7 +405,7 @@ $cont_fila_solicitacao = json_decode($fila_solicitacao ?? '',true);
 
                     <form action="{{url('usuarios/add')}}" method="post">
                     @csrf
-                    {!! NoCaptcha::renderJs() !!}
+                    
                     <div class="form-group">
                         <div class="input-group mb-3">
                          <div class="input-group-prepend">
