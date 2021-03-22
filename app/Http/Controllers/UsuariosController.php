@@ -19,6 +19,7 @@ class UsuariosController extends Controller
     public function listaTodos(){
     $usuarios = Usuario::where('usuario_ad', '=', 'admin')->
     get();
+    $usuarios = Usuario::get();
     return view('usuarios.list', ['usuarios' => $usuarios]);
     }
 
@@ -39,7 +40,13 @@ class UsuariosController extends Controller
     }
 
     public function new(){
-      return view('usuarios.form');
+      $fila_solicitacao = DB::table('usuarios')
+                 ->select('andamento', DB::raw('count(*) as total'))
+                 ->where('andamento', '=', 'solicitado')
+                 ->groupBy('andamento')
+                 ->get();
+
+      return view('usuarios.form', ['fila_solicitacao' => $fila_solicitacao]);
     }
 
     public function pendente(){
@@ -88,10 +95,10 @@ class UsuariosController extends Controller
         'atividade' => 'required',
         'contato' => 'required'
     ], [
-        'endereco.required' => 'Name is required',
-        'nome.required' => 'Password is required',
-        'atividade.required' => 'Name is required',
-        'contato.required' => 'Password is required'
+        'endereco.required' => 'Campo endereco obrigatório',
+        'nome.required' => 'Campo nome obrigatório',
+        'atividade.required' => 'Campo atividade obrigatório',
+        'contato.required' => 'Campo contato obrigatório'
     ]);
 
 
@@ -106,8 +113,6 @@ class UsuariosController extends Controller
 
       #$mapboxinfo = $request->input('endereco');
       #$usuarios = Usuario::get();
-
-
 
       return back()->with('registrado', 'Solicitação enviada com sucesso.');
       #return Redirect::to('/usuarios');

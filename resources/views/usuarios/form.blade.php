@@ -216,6 +216,7 @@ if ($geoPlugin_array["geoplugin_region"] === "Parana"){
     $verif_reg = false;
     }
 
+$cont_fila_solicitacao = json_decode($fila_solicitacao ?? '',true);
 
 ?>
 
@@ -243,8 +244,12 @@ if ($geoPlugin_array["geoplugin_region"] === "Parana"){
                 <div class="shadow p-1 mb-1 bg-white rounded"><center>Para região não compatível, a solicitacao do pedido sera colocado em baixa prioridade</center></div>
                 @endif
 
-
                 <div class="card-body">
+
+                  <div class="input-group mb-3">
+                     <span class="badge badge-secondary" style="font-size: 0.83em; color: white;">Solicitações de caçambas pendentes: {{$cont_fila_solicitacao[0]['total'] ?? ''}}</span><br>
+                  </div>
+
                     @if (session('status'))
                         <div class="alert alert-success" role="alert">
                             {{ session('status') }}
@@ -390,7 +395,8 @@ if ($geoPlugin_array["geoplugin_region"] === "Parana"){
 
                     @if(Session::has('registrado'))
                     <div class="alert alert-success">
-                        {{ Session::get('registrado') }}
+                        {{ Session::get('registrado') }} você esta na posição {{$cont_fila_solicitacao[0]['total'] ?? ''}}.ª da fila.<br>
+                        Em caso de duvidas, favor entrar em contato com (44)3532-8100.
                         @php
                             Session::forget('registrado');
                         @endphp
@@ -405,10 +411,10 @@ if ($geoPlugin_array["geoplugin_region"] === "Parana"){
                            <label class="input-group-text" for="endereco" data-toggle="tooltip" data-placement="top" title="Endereco">Endereco</label>
                          </div>
                          <input type="text" name='endereco' class="form-control" placeholder="Avenida João Theotonio Moreira Sales Neto 600" data-toggle="tooltip" data-placement="top" title="Ex: Avenida João Theotonio Moreira Sales Neto 600">
-                         @if ($errors->has('endereco'))
-                            <span class="text-danger">{{$errors->first('endereco')}}</span>
-                        @endif
                       </div>
+                      @if ($errors->has('endereco'))
+                         <span class="text-danger"><i class="fas fa-arrow-up"></i> {{$errors->first('endereco')}}, Exemplo: Avenida João Theotonio Moreira Sales Neto 600</span>
+                     @endif
                     </div>
 
                     <div class="form-group">
@@ -435,10 +441,10 @@ if ($geoPlugin_array["geoplugin_region"] === "Parana"){
                            <label class="input-group-text" for="nome">Nome</label>
                          </div>
                          <input type="text" name='nome' class="form-control">
-                         @if ($errors->has('nome'))
-                            <span class="text-danger">{{$errors->first('nome')}}</span>
-                        @endif
                       </div>
+                      @if ($errors->has('nome'))
+                         <span class="text-danger">{{$errors->first('nome')}}</span>
+                     @endif
                     </div>
 
                     <div class="form-group">
@@ -454,6 +460,9 @@ if ($geoPlugin_array["geoplugin_region"] === "Parana"){
                          <option value="terra">Terra</option>
                        </select>
                       </div>
+                      @if ($errors->has('atividade'))
+                         <span class="text-danger">{{$errors->first('atividade')}}</span>
+                     @endif
                     </div>
 
                     <div class="form-group">
@@ -461,9 +470,12 @@ if ($geoPlugin_array["geoplugin_region"] === "Parana"){
                          <div class="input-group-prepend">
                            <label class="input-group-text" for="contato">Contato</label>
                          </div>
-                         <input type="tel" name='contato' class="form-control" placeholder="(44)3532-8100" value="(44)">
+                         <input type="tel" name='contato' class="form-control" placeholder="(44)3532-8100">
                       </div>
                     </div>
+                    @if ($errors->has('contato'))
+                       <span class="text-danger">{{$errors->first('contato')}}</span>
+                   @endif
 
                     @guest
                     @else

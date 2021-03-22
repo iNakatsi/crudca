@@ -21,6 +21,8 @@
     <link href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css" rel="stylesheet">
     <link href="https://cdn.datatables.net/buttons/1.7.0/css/buttons.dataTables.min.css" rel="stylesheet">
 
+
+
     <!-- Map box link and reference -->
     <link href='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.0/mapbox-gl-geocoder.css" type="text/css">
@@ -28,6 +30,9 @@
 
     <!-- Chat JS -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+
+        <script src='https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js'></script>
 
 </head>
 <body>
@@ -44,7 +49,7 @@
 
               @guest
               <div class="btn-group" role="group">
-              <button type="button" class="btn btn-light"><a href="{{ url('usuarios/new')}}"><i class="fas fa-plus-square"></i> Solicitar Caçamba</a></button>
+              <button type="button" class="btn btn-light dropdown-item"><a href="{{ url('usuarios/new')}}"><i class="fas fa-plus-square"></i> Solicitar Caçamba</a></button>
               </div>
               @else
               <div class="btn-group" role="group">
@@ -146,7 +151,7 @@
   //Data Table Script
 $(document).ready(function() {
     $('#myTable').DataTable( {
-        ordering: false,
+        order: [ 9, "desc" ],
         dom: 'Bfrtip',
         buttons: [
           { extend: 'copy', text: '<span style="font-size: 1em; color: Grey;"><i class="fas fa-copy"></i></span> Copiar' },
@@ -218,6 +223,7 @@ $(document).ready(function() {
       }
 
   }
+
 
   </script>
 
