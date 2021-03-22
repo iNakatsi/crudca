@@ -554,8 +554,9 @@ $cont_fila_solicitacao = json_decode($fila_solicitacao ?? '',true);
                       </div>
                     </div>
                     @endguest
-                    
-                    <button type="submit" class="btn btn-primary btn-block">Cadastrar</button>
+
+                    {!! NoCaptcha::display() !!}
+                    <button type="submit" class="btn btn-primary btn-block">Cadastrar1</button>
 
                     </form>
 
@@ -569,3 +570,5 @@ $cont_fila_solicitacao = json_decode($fila_solicitacao ?? '',true);
     </div>
 </div>
 @endsection
+
+{!! NoCaptcha::renderJs() !!}
