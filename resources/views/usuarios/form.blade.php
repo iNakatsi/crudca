@@ -405,7 +405,7 @@ $cont_fila_solicitacao = json_decode($fila_solicitacao ?? '',true);
 
                     <form action="{{url('usuarios/add')}}" method="post">
                     @csrf
-                    
+
                     <div class="form-group">
                         <div class="input-group mb-3">
                          <div class="input-group-prepend">
@@ -554,7 +554,7 @@ $cont_fila_solicitacao = json_decode($fila_solicitacao ?? '',true);
                       </div>
                     </div>
                     @endguest
-                    {!! NoCaptcha::display() !!}
+                    
                     <button type="submit" class="btn btn-primary btn-block">Cadastrar</button>
 
                     </form>

@@ -135,6 +135,7 @@
     @stack('scripts')
 
     {!! NoCaptcha::renderJs() !!}
+    {!! NoCaptcha::display() !!}
 
 </body>
 
