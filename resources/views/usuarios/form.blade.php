@@ -413,7 +413,7 @@ $cont_fila_solicitacao = json_decode($fila_solicitacao ?? '',true);
                          <input type="text" name='endereco' class="form-control" placeholder="Avenida João Theotonio Moreira Sales Neto 600" data-toggle="tooltip" data-placement="top" title="Ex: Avenida João Theotonio Moreira Sales Neto 600">
                       </div>
                       @if ($errors->has('endereco'))
-                         <span class="text-danger"><i class="fas fa-arrow-up"></i> {{$errors->first('endereco')}}, Exemplo: Avenida João Theotonio Moreira Sales Neto 600</span>
+                         <span class="text-danger"><i class="fas fa-arrow-up"></i> {{$errors->first('endereco')}}</span>
                      @endif
                     </div>
 
@@ -524,6 +524,9 @@ $cont_fila_solicitacao = json_decode($fila_solicitacao ?? '',true);
                          </div>
                          <input type="date" class="form-control" name="data_pedido">
                       </div>
+                      @if ($errors->has('data_pedido'))
+                         <span class="text-danger">{{$errors->first('data_pedido')}}</span>
+                     @endif
                     </div>
                     @endguest
 

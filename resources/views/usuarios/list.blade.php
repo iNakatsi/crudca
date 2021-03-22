@@ -14,7 +14,7 @@
                         </div>
                     @endif
 
-                    <table id="myTable" class="display nowrap" style="width:100%">
+                    <table id="myTable" class="display" style="width:100%">
                     <thead>
                       <tr>
                         <th>#</th>

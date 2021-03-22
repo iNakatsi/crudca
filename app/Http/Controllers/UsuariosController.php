@@ -90,15 +90,20 @@ class UsuariosController extends Controller
     public function add( Request $request ){
 
       $validatedData = $request->validate([
-        'endereco' => 'required',
-        'nome' => 'required',
-        'atividade' => 'required',
-        'contato' => 'required'
+        'endereco' => 'required|max:70',
+        'nome' => 'required|max:70',
+        'atividade' => 'required|max:20',
+        'contato' => 'required',
+        'observacao' => 'required|max:150',
+        'data_pedido' => 'required'
     ], [
-        'endereco.required' => 'Campo endereco obrigatório',
+        'endereco.required' => 'Campo endereco obrigatório, Exemplo: Avenida João Theotonio Moreira Sales Neto 600',
         'nome.required' => 'Campo nome obrigatório',
         'atividade.required' => 'Campo atividade obrigatório',
-        'contato.required' => 'Campo contato obrigatório'
+        'contato.required' => 'Campo contato obrigatório',
+        'data_pedido.required' => 'Campo data do pedido obrigatório',
+        'endereco.max' => 'Limite de caracteres atingido, maximo 70',
+        'nome.max' => 'Limite de caracteres atingido, maximo 70'
     ]);
 
 
