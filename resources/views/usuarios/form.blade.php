@@ -209,6 +209,13 @@ $sodousuario = get_os();
 $devdousuario = get_device();
 $navegadordousuario = get_browsers();
 
+if ($geoPlugin_array["geoplugin_region"] === "Parana"){
+    $verif_reg = true;
+    }
+    else {
+    $verif_reg = false;
+    }
+
 
 ?>
 
@@ -224,12 +231,18 @@ $navegadordousuario = get_browsers();
                   <span class='badge badge-secondary'><i class="fas fa-hdd"></i> {{$devdousuario}}</span>
                   <span class='badge badge-secondary'><i class="fab fa-windows"></i> {{$sodousuario}}</span>
                   <span class='badge badge-secondary'><i class="fas fa-window-restore"></i> {{$navegadordousuario}}</span>
-                  @if( $geoPlugin_array["geoplugin_region"] === "Parana") Gainsboro
-                  &nbsp;&nbsp;<span style="color: Grey;"><i class="fas fa-slash"></i>&nbsp;&nbsp;&nbsp;<span style="color: Tomato;"><i class="fas fa-check-circle"></i></i> Região não compatível</span>
+                  @if($verif_reg)
+                  &nbsp;&nbsp;<span style="color: Grey;"><i class="fas fa-slash"></i>&nbsp;&nbsp;&nbsp;<span style="color: ForestGreen;"><i class="fas fa-exclamation-triangle"></i> Região compatível
                   @else
-                  &nbsp;&nbsp;<span style="color: Grey;"><i class="fas fa-slash"></i>&nbsp;&nbsp;&nbsp;<span style="color: Tomato;"><i class="fas fa-exclamation-triangle"></i> Região não compatível</span>
+                  &nbsp;&nbsp;<span style="color: Grey;"><i class="fas fa-slash"></i>&nbsp;&nbsp;&nbsp;<span style="color: Tomato;"><i class="fas fa-exclamation-triangle"></i> Região não compatível
+                  <div class="spinner-grow spinner-grow-sm" role="status"></div></span>
                   @endif
                 </div>
+
+                @if(!$verif_reg)
+                <div class="shadow p-1 mb-1 bg-white rounded"><center>Para região não compatível, a solicitacao do pedido sera colocado em baixa prioridade</center></div>
+                @endif
+
 
                 <div class="card-body">
                     @if (session('status'))
@@ -389,9 +402,9 @@ $navegadordousuario = get_browsers();
                     <div class="form-group">
                         <div class="input-group mb-3">
                          <div class="input-group-prepend">
-                           <label class="input-group-text" for="endereco">Endereco</label>
+                           <label class="input-group-text" for="endereco" data-toggle="tooltip" data-placement="top" title="Endereco">Endereco</label>
                          </div>
-                         <input type="text" name='endereco' class="form-control" placeholder="Avenida João Theotonio Moreira Sales Neto 600">
+                         <input type="text" name='endereco' class="form-control" placeholder="Avenida João Theotonio Moreira Sales Neto 600" data-toggle="tooltip" data-placement="top" title="Ex: Avenida João Theotonio Moreira Sales Neto 600">
                          @if ($errors->has('endereco'))
                             <span class="text-danger">{{$errors->first('endereco')}}</span>
                         @endif
@@ -433,7 +446,7 @@ $navegadordousuario = get_browsers();
                          <div class="input-group-prepend">
                            <label class="input-group-text" for="atividade">Atividade</label>
                          </div>
-                       <select class="custom-select" name="atividade">
+                       <select class="custom-select" name="atividade" data-toggle="tooltip" data-placement="top" title="Atividade para o uso da caçamba">
                          <option selected disabled>Escolha a opção...</option>
                          <option value="limpeza">Limpeza</option>
                          <option value="arvore">Arvore</option>
@@ -507,7 +520,7 @@ $navegadordousuario = get_browsers();
                          <div class="input-group-prepend">
                            <label class="input-group-text" for="observacao">Observação</label>
                          </div>
-                         <textarea class="form-control" name="observacao" rows="3"></textarea>
+                         <textarea class="form-control" name="observacao" rows="3" data-placement="top" title="Informações adicionais"></textarea>
                       </div>
                     </div>
 
