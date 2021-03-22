@@ -444,7 +444,7 @@ $cont_fila_solicitacao = json_decode($fila_solicitacao ?? '',true);
                          <input type="text" name='nome' class="form-control">
                       </div>
                       @if ($errors->has('nome'))
-                         <span class="text-danger">{{$errors->first('nome')}}</span>
+                         <span class="text-danger"><i class="fas fa-arrow-up"></i>{{$errors->first('nome')}}</span>
                      @endif
                     </div>
 
@@ -462,7 +462,7 @@ $cont_fila_solicitacao = json_decode($fila_solicitacao ?? '',true);
                        </select>
                       </div>
                       @if ($errors->has('atividade'))
-                         <span class="text-danger">{{$errors->first('atividade')}}</span>
+                         <span class="text-danger"><i class="fas fa-arrow-up"></i> {{$errors->first('atividade')}}</span>
                      @endif
                     </div>
 
@@ -475,7 +475,7 @@ $cont_fila_solicitacao = json_decode($fila_solicitacao ?? '',true);
                       </div>
                     </div>
                     @if ($errors->has('contato'))
-                       <span class="text-danger">{{$errors->first('contato')}}</span>
+                       <span class="text-danger"><i class="fas fa-arrow-up"></i> {{$errors->first('contato')}}</span>
                    @endif
 
                     @guest
@@ -555,7 +555,11 @@ $cont_fila_solicitacao = json_decode($fila_solicitacao ?? '',true);
                     </div>
                     @endguest
 
-                    {!! NoCaptcha::display() !!}
+                    <center>{!! NoCaptcha::display() !!}</center>
+                    @if ($errors->has('g-recaptcha-response'))
+                       <span class="text-danger">{{$errors->first('g-recaptcha-response')}}</span>
+                   @endif
+
                     <button type="submit" class="btn btn-primary btn-block">Cadastrar1</button>
 
                     </form>

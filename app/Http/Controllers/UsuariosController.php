@@ -95,7 +95,8 @@ class UsuariosController extends Controller
         'atividade' => 'required|max:20',
         'contato' => 'required',
         'observacao' => 'required|max:150',
-        'data_pedido' => 'required'
+        'data_pedido' => 'required',
+        'g-recaptcha-response' => 'required|captcha'
     ], [
         'endereco.required' => 'Campo endereco obrigatório, Exemplo: Avenida João Theotonio Moreira Sales Neto 600',
         'nome.required' => 'Campo nome obrigatório',
@@ -103,7 +104,9 @@ class UsuariosController extends Controller
         'contato.required' => 'Campo contato obrigatório',
         'data_pedido.required' => 'Campo data do pedido obrigatório',
         'endereco.max' => 'Limite de caracteres atingido, maximo 70',
-        'nome.max' => 'Limite de caracteres atingido, maximo 70'
+        'nome.max' => 'Limite de caracteres atingido, maximo 70',
+        'g-recaptcha-response.required' => 'You must check the reCAPTCHA.',
+        'g-recaptcha-response.captcha' => 'Captcha error! try again later or contact site admin.'
     ]);
 
 
