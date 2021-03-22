@@ -392,6 +392,7 @@ $cont_fila_solicitacao = json_decode($fila_solicitacao ?? '',true);
 
                     @else
 
+                    {!! NoCaptcha::renderJs() !!}
 
                     @if(Session::has('registrado'))
                     <div class="alert alert-success">
@@ -553,7 +554,7 @@ $cont_fila_solicitacao = json_decode($fila_solicitacao ?? '',true);
                       </div>
                     </div>
                     @endguest
-
+                    <center>{!! NoCaptcha::display() !!}</center><br>
                     <button type="submit" class="btn btn-primary btn-block">Cadastrar</button>
 
                     </form>
