@@ -555,7 +555,15 @@ $cont_fila_solicitacao = json_decode($fila_solicitacao ?? '',true);
                     </div>
                     @endguest
 
-                    <center>{!! NoCaptcha::display() !!}</center>
+                    <div class="form-group">
+                        <div class="input-group mb-3">
+                         <div class="input-group-prepend">
+                           <label class="input-group-text" for="observacao" data-placement="top" title="Completely Automated Public Turing test to tell Computers and Humans Apart">CAPTCHA</label>
+                         </div>
+                         {!! NoCaptcha::display() !!}
+                      </div>
+                    </div>
+
                     @if ($errors->has('g-recaptcha-response'))
                        <span class="text-danger">{{$errors->first('g-recaptcha-response')}}</span>
                    @endif
@@ -574,5 +582,3 @@ $cont_fila_solicitacao = json_decode($fila_solicitacao ?? '',true);
     </div>
 </div>
 @endsection
-
-{!! NoCaptcha::renderJs() !!}
