@@ -97,14 +97,14 @@ class UsuariosController extends Controller
         'observacao' => 'max:150',
         'g-recaptcha-response' => 'required|captcha'
     ], [
-        'endereco.required' => 'Campo endereco obrigatório, Exemplo: Avenida João Theotonio Moreira Sales Neto 600',
-        'nome.required' => 'Campo nome obrigatório',
-        'atividade.required' => 'Campo atividade obrigatório',
-        'contato.required' => 'Campo contato obrigatório',
-        'endereco.max' => 'Limite de caracteres atingido, maximo 70',
-        'nome.max' => 'Limite de caracteres atingido, maximo 70',
-        'g-recaptcha-response.required' => 'You must check the reCAPTCHA.',
-        'g-recaptcha-response.captcha' => 'Captcha error! try again later or contact site admin.'
+        'endereco.required' => 'Campo endereco obrigatório, Exemplo: Avenida João Theotonio Moreira Sales Neto 600.',
+        'nome.required' => 'Campo nome obrigatório.',
+        'atividade.required' => 'Campo atividade obrigatório.',
+        'contato.required' => 'Campo contato obrigatório.',
+        'endereco.max' => 'Limite de caracteres atingido, maximo 70.',
+        'nome.max' => 'Limite de caracteres atingido, maximo 70.',
+        'g-recaptcha-response.required' => 'Você deve checar o Captcha.',
+        'g-recaptcha-response.captcha' => 'Erro no Captcha! tente novamente.'
 
     ]);
 

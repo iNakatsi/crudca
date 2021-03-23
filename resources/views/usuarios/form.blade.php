@@ -525,9 +525,6 @@ $cont_fila_solicitacao = json_decode($fila_solicitacao ?? '',true);
                          </div>
                          <input type="date" class="form-control" name="data_pedido">
                       </div>
-                      @if ($errors->has('data_pedido'))
-                         <span class="text-danger">{{$errors->first('data_pedido')}}</span>
-                     @endif
                     </div>
                     @endguest
 
@@ -562,11 +559,11 @@ $cont_fila_solicitacao = json_decode($fila_solicitacao ?? '',true);
                          </div>
                          {!! NoCaptcha::display() !!}
                       </div>
+                      @if ($errors->has('g-recaptcha-response'))
+                         <span class="text-danger"><i class="fas fa-arrow-up"></i>{{$errors->first('g-recaptcha-response')}}</span>
+                     @endif
                     </div>
 
-                    @if ($errors->has('g-recaptcha-response'))
-                       <span class="text-danger">{{$errors->first('g-recaptcha-response')}}</span>
-                   @endif
 
                     <button type="submit" class="btn btn-primary btn-block">Cadastrar</button>
 
