@@ -89,7 +89,7 @@
                                 </li>
                             @endif
                             -->
-                            
+
                         @else
                             <!-- Pagina para administradores -->
 
@@ -153,7 +153,7 @@
   //Data Table Script
 $(document).ready(function() {
     $('#myTable').DataTable( {
-        order: [ 9, "desc" ],
+        order: [ 9, "asc" ],
         dom: 'Bfrtip',
         buttons: [
           { extend: 'copy', text: '<span style="font-size: 1em; color: Grey;"><i class="fas fa-copy"></i></span> Copiar' },
