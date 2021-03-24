@@ -1,0 +1,16 @@
+------------------------------ Pendente ------------------------------
+
+
+
+...Database com registro de cacambas(Aguardando serializacao das cacambas).
+
+------------------------------ Feito ------------------------------
+
+Botao de logout
+cadastro, entregue + data
+atividade + "terra"
+Selecionar o que imprimir
+Flag de prioridade
+Adicionar botao de pendente de entrega
+Interface do usuario para solicitao(apenas de solicitacao), ver lugar na fila e infos.
+Adicionar validacao nos formularios
