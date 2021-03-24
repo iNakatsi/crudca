@@ -1,4 +1,4 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/iNakatsi/crudca/master/public/img/moreirasaleslogo.png" width="150"></a></p>
+<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/iNakatsi/crudca/master/public/img/moreirasaleslogo.png?token=AF2KCKPAP543J3UPNNNUWR3ALPWB2" width="150"></a></p>
 
 <p align="center">
 <a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
