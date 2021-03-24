@@ -1,5 +1,6 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img raw="true" src="./public/img/moreirasaleslogo.png" width="150"></a></p>
+<p align="center"><a href="https://laravel.com" target="_blank"><img src="./public/img/moreirasaleslogo.png" width="150"></a></p>
 
+<img src="https://image.flaticon.com/icons/png/512/873/873120.png" width="30" />
 <p align="center">
 <a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
@@ -9,7 +10,7 @@
 
 ## CRUDCA
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+CRUD simples para registro de cacambas feito em php utilizando a framework laravel.
 
 - [Simple, fast routing engine](https://laravel.com/docs/routing).
 - [Powerful dependency injection container](https://laravel.com/docs/container).
