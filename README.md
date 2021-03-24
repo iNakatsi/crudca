@@ -1,6 +1,5 @@
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="./public/img/moreirasaleslogo.png" width="150"></a></p>
 
-<img src="https://image.flaticon.com/icons/png/512/873/873120.png" width="30" />
 <p align="center">
 <a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
@@ -12,13 +11,7 @@
 
 CRUD simples para registro de cacambas feito em php utilizando a framework laravel.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+- [Site hospedado no heroku](http://crudcams.herokuapp.com).<a href="http://crudcams.herokuapp.com" target="_blank"><img src="https://image.flaticon.com/icons/png/512/873/873120.png" width="20" /></a>
 
 Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
