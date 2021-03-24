@@ -4,6 +4,12 @@
 
 <img src="https://img.shields.io/github/last-commit/iNakatsi/crudca" alt="Last Commit">
 <img src="https://img.shields.io/github/languages/code-size/iNakatsi/crudca" alt="Code Size">
+<img src="https://img.shields.io/github/contributors/iNakatsi/crudca" alt="Contributors">
+<img src="https://img.shields.io/github/checks-status/iNakatsi/crudca/master" alt="Check Status">
+<img src="https://img.shields.io/github/forks/iNakatsi/crudca?style=social" alt="Forks">
+
+
+
 
 </p>
 
