@@ -29,7 +29,3 @@
 CRUD simples para registro de cacambas feito em php utilizando a framework laravel.
 
 - [Site hospedado no heroku](http://crudcams.herokuapp.com).<a href="http://crudcams.herokuapp.com" target="_blank"><img src="https://image.flaticon.com/icons/png/512/873/873120.png" width="20" /></a>
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
