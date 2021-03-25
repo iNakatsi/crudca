@@ -8,7 +8,7 @@
 <img src="https://img.shields.io/github/checks-status/iNakatsi/crudca/master" alt="Check Status">
 <img src="https://img.shields.io/github/forks/iNakatsi/crudca?style=social" alt="Forks">
 <img src="https://img.shields.io/github/watchers/iNakatsi/crudca.svg" alt="Forks">
-
+<br>
 <img src="https://img.shields.io/badge/Arch_Linux-1793D1?style=for-the-badge&logo=arch-linux&logoColor=white" alt="Forks">
 
 <img src="https://img.shields.io/badge/HTML-239120?style=for-the-badge&logo=html5&logoColor=white" alt="Forks">
